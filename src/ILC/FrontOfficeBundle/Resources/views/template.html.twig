@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<title>{% block pagetitle %} - Formation ILC France{% endblock %}</title>
+<link rel="stylesheet" href="/res/css/ilc.css" type="text/css" />
+<script type="text/javascript" src="/res/js/jquery.1.8.3.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('input[type=radio]:disabled').attr('title', 'Cette session est déja pleine');
+	$('input[type=radio]:disabled').live('click', function() { alert('Cette session est déja pleine'); });
+});
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<div id="container">
+		<div id="banner">
+			<h1>BOOKING ONLINE</h1>
+			<div id="banImg">
+				<img src="/res/images/ob.jpg" />
+			</div>
+		</div>
+		<div id="left">
+			{% block left %} {% if connected == true %}
+			<div class="block">
+				<a href="{{ path('fo_home') }}">Accueil</a>
+			</div>
+			<div class="block">
+				<a href="{{ path('fo_preambule') }}">Préambule</a>
+			</div>
+			<div class="block">
+				<a href="{{ path('fo_procedure_reservation') }}">Procédure de
+					réservation</a>
+			</div>
+			<div class="block">
+				<a href="{{ path('fo_condition_ostage') }}">Conditions d'ouverture d'un stage</a>
+			</div>
+			<div class="block">
+				<a href="{{ path('fo_glossaire') }}">Glossaire</a>
+			</div>
+			<div class="block">
+				<a href="{{ path('fo_faq') }}">FAQ</a>
+			</div>
+			{% endif %}
+			<div class="block">
+				<a href="{{ path('fo_annuaire') }}">Annuaire</a>
+			</div>
+			{% if connected == true %}
+			<div class="block">
+				<a href="{{ path('_security_logout') }}">Déconnexion</a>
+			</div>
+			{% endif %} {% if connected == false %}
+			<div class="block">
+				<b>Identification : </b><br /> {% for flashMessage in app.session.flashbag.get('info') %}
+<div class="msgDivinfo">{{ flashMessage|trans|raw }}</div><br/>
+{% endfor %}
+{% for flashMessage in app.session.flashbag.get('err') %}
+<div class="msgDiverr">{{ flashMessage|trans|nl2br|raw }}</div><br/>
+{% endfor %} <br />
+				<form action="{{ path("_security_check") }}" method="post" id="login">
+					<table>
+						<tr>
+							<th>{{ 'user.id'|trans }} : &nbsp;</th>
+						</tr>
+						<tr>
+							<td><input type="text" id="username" name="_username" value=""
+								style="width: 200px" /></td>
+						</tr>
+						<tr>
+							<th>{{ 'user.password'|trans }} : &nbsp;</th>
+						</tr>
+						<tr>
+							<td><input type="password" id="password" name="_password"
+								style="width: 200px" /></td>
+						</tr>
+						<tr>
+							<th><input type="submit" value=" {{ 'user.loginbtn'|trans }} " /></th>
+						</tr>
+					</table>
+				</form>
+			</div>
+			{% endif %} {% endblock %}
+		</div>
+		<div id="content">
+			{% block right %}
+			<h2>Cher Client,</h2>
+			<br />
+			<p>
+				Pour mieux répondre à vos besoins, <b>ILC se développe et vous propose
+					aujourd'hui un service amélioré pour planifier votre formation d’anglais en
+					ligne.</b>
+			</p>
+			<br />
+			<p>Les nouvelles fonctionnalités qui vous sont offertes permettent de
+				réserver modifier ou annuler vos sessions de formation en ligne.</p>
+			<br />
+			<p>Nous espérons que ce nouveau service vous donnera entière
+				satisfaction, n'hésitez pas à nous contacter pour toutes questions (aux
+				horaires habituelles d'ouverture du bureau). </p>
+			<br />
+			<p>
+				Bien cordialement<br /> <b>L’équipe d’ILC</b>
+			</p>
+			{% endblock %}
+		</div>
+		<div id="footer">
+			<h1>Copyright ILC France &copy; {{ 'now'|date('Y') }} | ILC France - IH Paris</h1>
+		</div>
+	</div>
+</body>
+</html>

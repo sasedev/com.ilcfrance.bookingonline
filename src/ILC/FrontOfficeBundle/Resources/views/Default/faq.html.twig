@@ -1,0 +1,24 @@
+{% extends 'ILCFrontOfficeBundle::template.html.twig' %}
+{% block pagetitle %}{{ pagetitle }} {{ parent() }}{% endblock %}
+{% block left %}
+{{ parent() }}
+{% endblock %} {% block right %}
+<br/>
+<h2>
+	FAQ
+</h2>
+<p>
+	<b>- Puis-je modifier les sessions (dates) sélectionnées ?</b><br/><br/>
+	Oui. Connectez-vous a ILC Online Booking, entrer votre identifiant et mot de passe. Sélectionner la nouvelle date. Cliquer sur « modifier ». Votre nouvelle inscription sera enregistrée.<br/>
+	<br/><br/>
+	<b>- Quel est le délai pour s’inscrire à une session de formation ?</b><br/><br/>
+	Vous avez 10 jours ouvrés pour vous inscrire et modifier vos sessions de formations. Au delà de ce délai vous devrez nous appeler au 01 44 41 80 22 pour toute modification.<br/>
+	<br/><br/>
+	<b>- Quel est le délai pour modifier une session de formation ?</b><br/><br/>
+	Toute annulation/modification doit de session de formation doit nous être communiquées impérativement par téléphone avant les 5 jours ouvrés précédents la date de la formation. Au delà de ce délai la formation est facturée et ne pourra pas être reprogrammée.<br/>
+	<br/><br/>
+	<b>- Comment puis-je changer de module de formation ?</b><br/><br/>
+	Vous devrez contacter Nancy winchester <a href="mailto:nwinchester@transfer.com?subject=Changer module de formation">nwinchester@transfer.com</a>.
+	<br/><br/>
+</p>
+{% endblock %}

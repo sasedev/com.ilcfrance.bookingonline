@@ -1,0 +1,43 @@
+{% extends 'ILCFrontOfficeBundle::template.html.twig' %}
+{% block pagetitle %}{{ pagetitle }} {{ parent() }}{% endblock %}
+{% block left %}
+{{ parent() }}
+{% endblock %} {% block right %}
+<br/>
+<h2>
+	Procédure de réservation - Client SANOFI-AVENTIS
+</h2>
+<p>
+	Afin d’assurer le bon déroulement de votre inscription en ligne, nous vous demandons de suivre les instructions suivantes :<br/>
+	<ul>
+		<li>Vous recevrez un email d’invitation avec une note explicative;</li>
+		<li>Connexion au site Internet : Rendez vous à l’adresse : <a href="http://www.ilcfrance.com">www.ilcfrance.com</a> ; cliquer sur l’icône ONLINE BOOKING;</li>
+		<li>Entrer votre identifiant et mot de passe;</li>
+		<li>Sélectionner une session (date) par module;</li>
+		<li>Cliquer sur <b>« Valider »</b>;</li>
+		<li>Une boîte de dialogue s’ouvre et vous pouvez voir la prise en compte de votre inscription aux sessions sélectionnées;</li>
+		<li>Vous recevrez un email de confirmation de votre inscription;</li>
+		<li>Une convocation  pour votre formation vous sera envoyée dès l’ouverture du stage (lorsque 6 personnes sont inscrites à une session).</li>
+	</ul>
+</p>
+<p>
+<span style="font-weight: bold; color: blue;">IMPORTANT :<br/>
+Une date butoir pour votre inscription en ligne est  fixé par le service Planning  et vous sera communiqué lors de la réception votre email d’invitation.</span>
+</p>
+<br/>
+<h2>Modification des sessions</h2>
+<p>
+Vous devez vous inscrire ou modifier vos sessions dans les délais mentionnés ( voir votre email d’invitation). Au delà de ce délai vous devrez nous appeler au 01 44 41 80 22 pour toute modification.
+</p>
+<br/>
+<h2>Vérouillage des sessions</h2>
+<p>
+Chaque session (dates) se verrouillera automatiquement lorsque 6 personnes sont inscrites.
+</p>
+<h2>Condition d’annulation après l’ouverture du stage</h2>
+<p>
+	Tout annulation/modification de session de formation après l’ouverture du stage doit  être communiquée impérativement par téléphone 5 jours ouvrés avant la date de la formation. Au delà de ce délai la formation est facturée et ne pourra pas être reprogrammée.
+</p>
+<br/>
+
+{% endblock %}

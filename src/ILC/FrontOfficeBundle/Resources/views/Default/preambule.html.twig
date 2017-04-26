@@ -1,0 +1,27 @@
+{% extends 'ILCFrontOfficeBundle::template.html.twig' %}
+{% block pagetitle %}{{ pagetitle }} {{ parent() }}{% endblock %}
+{% block left %}
+{{ parent() }}
+{% endblock %} {% block right %}
+<br/>
+<h2>
+	Préambule
+</h2>
+<p>ILC France  dispose d’un outil informatique dédié à la réservation de formation en ligne.<br/>
+Cet outil procure une visibilité sur l’offre.<br/>
+Cet outil informatique (dénommé ONLINE BOOKING) se présente sous forme d’une Centrale de réservation , accessible via le site de ILC France à l’adresse suivante <a href="{{ path('fo_home') }}">bookingonline.ilcfrance.com</a>
+</p>
+<br/>
+<p>
+Particulièrement adapté aux modules de formation intensives , ce système permet en particulier<br/>
+<ul>
+	<li>de visualiser le planning pour optimiser les agendas;</li>
+	<li>de faciliter les ouvertures des stages pour compresser le temps des mises en places.</li>
+</ul>
+</p>
+<br/>
+<p>
+Le présent manuel de procédure a pour objectif de faciliter le travail de chacun et d’alléger la charge de travail administratif des uns et des autres.<br/>
+Ces procédures ne sont ni figées, ni définitives et pourront évoluer en fonction de vos remarques et suggestions.<br/>
+</p>
+{% endblock %}

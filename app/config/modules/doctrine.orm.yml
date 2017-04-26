@@ -1,0 +1,78 @@
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   "%database_driver%"
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  "%database_charset%"
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        entity_managers:
+            default:
+                connection: default
+                auto_mapping: true
+                mappings:
+                    ILCDataBundle:
+                         type: annotation
+                         dir: "%kernel.root_dir%/../src/ILC/DataBundle/Entity"
+                         prefix: ILC\DataBundle\Entity
+                         alias: "ILCDataBundle"
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                metadata_cache_driver:
+                    type: service
+                    id: doctrine.cache.predis
+                query_cache_driver:
+                    type: service
+                    id: doctrine.cache.predis
+                result_cache_driver:
+                    type: service
+                    id: doctrine.cache.predis
+                second_level_cache:
+                    enabled: true
+                    log_enabled: true
+                    region_cache_driver:
+                        type: service
+                        id: doctrine.cache.predis
+                    region_lock_lifetime: 20
+                    region_lifetime: 30
+                    regions:
+                        region_administrator:
+                            lifetime: 300
+                            cache_driver:
+                                type: service
+                                id: doctrine.cache.predis
+                        region_groupmodule:
+                            lifetime: 300
+                            cache_driver:
+                                type: service
+                                id: doctrine.cache.predis
+                        region_moduleformation:
+                            lifetime: 300
+                            cache_driver:
+                                type: service
+                                id: doctrine.cache.predis
+                        region_modulepreinscription:
+                            lifetime: 300
+                            cache_driver:
+                                type: service
+                                id: doctrine.cache.predis
+                        region_sessionformation:
+                            lifetime: 300
+                            cache_driver:
+                                type: service
+                                id: doctrine.cache.predis
+                        region_sessioninscription:
+                            lifetime: 300
+                            cache_driver:
+                                type: service
+                                id: doctrine.cache.predis
+                        region_stagiaire:
+                            lifetime: 300
+                            cache_driver:
+                                type: service
+                                id: doctrine.cache.predis
+                                

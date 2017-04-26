@@ -1,0 +1,57 @@
+{% extends 'ILCFrontOfficeBundle::template.html.twig' %}
+{% block pagetitle %}{{ pagetitle }} {{ parent() }}{% endblock %}
+{% block left %}
+{{ parent() }}
+{% endblock %} {% block right %}
+<br/>
+<h2>
+	Bonjour <b>{{ user.prenom }} {{ user.nom }}</b>
+</h2>
+<p>
+	Les modules auxquels vous avez étés préinscrits sont :<br />
+{% for mod in user.modules %}
+	 - <b>{{ mod.intitule }}</b><br />
+	{% set currsession = null %}
+	{% for sess in user.sessions %}
+		{% if sess.moduleformation.id == mod.id %}{% set currsession = sess %}{% endif %}
+	{% endfor %}
+	{% if null != currsession %}
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <u>Session choisie : <b><i>{{ currsession.intitule }}</i></b></u><br/>
+	{% endif %}
+	<br/>
+{% endfor %}
+</p>
+<br/>
+
+<p><form action="{{ path('fo_updatesessions') }}" method="post">
+{% for mod in user.modules %}
+	<b>{{ mod.intitule }}</b> :
+	{% set currsession = null %}
+	{% for sess in user.sessions %}
+		{% if sess.moduleformation.id == mod.id %}{% set currsession = sess %}
+			{{ sess.intitule }}<br/>
+	 		Date de début :  {{ sess.datedebut | localizeddate('full', 'none', app.request.locale ) }} à {{ sess.heuredebut|date('H:i') }}<br/>
+	 		Date de fin :  {{ sess.datefin | localizeddate('full', 'none', app.request.locale ) }} à {{ sess.heurefin|date('H:i') }}<br/>
+	 		Lieu : {{ sess.lieu }} <br/><br/> {% endif %}
+	{% endfor %}
+	<br />
+	{% for mses in mod.sessions %}
+	 	<input type="radio" name="mod{{ mod.id }}" value="{{ mses.id }}"  {% if ( ( mses.stagiaires | length) >= mses.maxparticipants ) or ( mses.datedebut | date('Y-m-d') <= "now" | date('Y-m-d') ) %}disabled="disabled"{% endif %} {% if( null != currsession and currsession.id == mses.id) %}checked="checked"{% endif %} />
+	 		{{ mses.intitule }}<br/>
+	 		Date de début :  {{ mses.datedebut | localizeddate('full', 'none', app.request.locale ) }} à {{ mses.heuredebut|date('H:i') }}<br/>
+	 		Date de fin :  {{ mses.datefin | localizeddate('full', 'none', app.request.locale ) }} à {{ mses.heurefin|date('H:i') }}<br/>
+	 		Lieu : {{ mses.lieu }} <br/><br/>
+	{% endfor %}
+	<br/>
+{% endfor %}
+<input type="submit" value="Valider">
+</form>
+{% for flashMessage in app.session.flashbag.get('info') %}
+<div class="msgDivinfo">{{ flashMessage|trans|raw }}</div><br/>
+{% endfor %}
+{% for flashMessage in app.session.flashbag.get('err') %}
+<div class="msgDiverr">{{ flashMessage|trans|nl2br|raw }}</div><br/>
+{% endfor %}
+
+</p>
+{% endblock %}

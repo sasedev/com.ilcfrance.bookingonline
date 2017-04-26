@@ -1,0 +1,6 @@
+# This file is auto-generated during the composer install
+parameters:
+    scheme: http
+    domain_com_ilcfrance_bookingonline: bookingonline.ilcfrance.predator.loc
+    mail_from: "system@%domain_com_ilcfrance_bookingonline%"
+    mailer_transport: sendmail

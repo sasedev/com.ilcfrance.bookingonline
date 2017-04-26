@@ -1,0 +1,7 @@
+parameters:
+#    ilc_front_office.example.class: ILC\FrontOfficeBundle\Example
+
+services:
+#    ilc_front_office.example:
+#        class: %ilc_front_office.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,7 @@
+# Doctrine Cache
+doctrine_cache:
+    providers:
+        vendor_filesystem_validation_cache:
+            file_system:
+                extension: cache
+                directory: "%kernel.root_dir%/../var/cache/%kernel.environment%/doctrine/cache"

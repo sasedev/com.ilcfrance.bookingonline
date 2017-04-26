@@ -1,0 +1,32 @@
+{% extends 'ILCFrontOfficeBundle::template.html.twig' %}
+{% block pagetitle %}{{ pagetitle }} {{ parent() }}{% endblock %}
+{% block left %}
+{{ parent() }}
+{% endblock %} {% block right %}
+<br/>
+<h2>
+	Annuaire
+</h2>
+
+<p>
+Léa Paolini<br/>
+Direction des Projets et Organisation<br/>
+Téléphone: 01 44 41 80 22<br/>
+Email: <a href="mailto:lea.paolini@ilcfrance.com">lea.paolini@ilcfrance.com</a>
+</p>
+<p>
+Jane Guillier<br/>
+Chargé de Mission Projets et Organisation<br/>
+Téléphone: 01 44 41 80 20<br/>
+Email: <a href="mailto:jane.guillier@ilcfrance.com">jane.guillier@ilcfrance.com</a>
+</p>
+<p>
+Judite Goncalves<br/>
+Responsble Planning<br/>
+Téléphone: 01 44 41 80 24<br/>
+Email: <a href="mailto:judite.goncalves@ilcfrance.com">judite.goncalves@ilcfrance.com</a>
+</p>
+
+
+<br/>
+{% endblock %}

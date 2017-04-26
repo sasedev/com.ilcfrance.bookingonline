@@ -1,0 +1,32 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: parameters_prod.yml }
+    - { resource: config.yml }
+
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing_%kernel.environment%.yml"
+        strict_requirements: true
+
+monolog:
+    handlers:
+        syslog_error:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%_error.log"
+            level: error
+        syslog_info:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%_info.log"
+            channels: ["!event", "!doctrine"]
+            level: info
+        syslog_debug:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%_debug.log"
+            level: debug
+        console:
+            type:   console
+            bubble: false
+            channels: ["!event", "!doctrine"]
+            verbosity_levels:
+                VERBOSITY_VERBOSE: INFO
+                VERBOSITY_VERY_VERBOSE: DEBUG

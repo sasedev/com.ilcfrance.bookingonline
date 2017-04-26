@@ -1,0 +1,53 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: parameters_test.yml }
+    - { resource: config.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    router:
+        resource: "%kernel.root_dir%/config/routing_%kernel.environment%.yml"
+        strict_requirements: true
+    profiler: 
+        only_exceptions: false
+        collect: true
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+monolog:
+    handlers:
+        syslog_error:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%_error.log"
+            level: error
+        syslog_info:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%_info.log"
+            channels: ["!event", "!doctrine"]
+            level: info
+        syslog_debug:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%_debug.log"
+            level: debug
+        console:
+            type:   console
+            bubble: false
+            channels: ["!event", "!doctrine"]
+            verbosity_levels:
+                VERBOSITY_VERBOSE: INFO
+                VERBOSITY_VERY_VERBOSE: DEBUG
+        # uncomment to get logging in your browser
+        # you may have to allow bigger header sizes in your Web server configuration
+        #firephp:
+        #    type:   firephp
+        #    level:  info
+        #chromephp:
+        #    type:   chromephp
+        #    level:  info
+
+swiftmailer:
+    disable_delivery: true

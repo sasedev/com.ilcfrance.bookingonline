@@ -1,0 +1,29 @@
+<html>
+<body>
+Bonjour,<br/>
+<p>
+Nous confirmons votre inscription au(x) module(s) suivant(s):
+</p>
+<p>
+<br/>
+{% for sess in sessions %}
+<b>
+{{ sess.moduleformation.intitule }} - {{ sess.intitule }}<br/>
+	 		Date de début :  {{ sess.datedebut | localizeddate('full', 'none', app.request.locale ) }} à {{ sess.heuredebut|date('H:i') }}<br/>
+	 		Date de fin :  {{ sess.datefin | localizeddate('full', 'none', app.request.locale ) }} à {{ sess.heurefin|date('H:i') }}<br/>
+	 		Lieu : {{ sess.lieu }}
+</b><br/><br/>
+{% endfor %}
+</p>
+<br/>
+<br/>
+<p>
+Cordialement,<br/>
+<br/>
+<b>Léa Paolini</b><br/>
+Direction des Projets et Organisation<br/>
+Tél : 01 44 41 80 22<br/>
+Email : lea.paolini@ilcfrance.com
+</p>
+</body>
+</html>

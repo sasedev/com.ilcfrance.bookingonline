@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<title>Identification - Formation ILC France</title>
+<link rel="stylesheet" href="/res/css/ilc.css" type="text/css" />
+<script type="text/javascript" src="/res/js/jquery.1.8.3.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="banner">
+			<h1>BOOKING ONLINE</h1>
+			<div id="banImg">
+				<img src="/res/images/ob.jpg" />
+			</div>
+		</div>
+		<div id="left">
+			{% block left %}
+			<div class="block">
+				<a href="{{ path('fo_annuaire') }}">Annuaire</a>
+			</div>
+			{% endblock %}
+		</div>
+		<div id="content">
+			{% block right %}
+			<br/>
+			<h2>Cher Client,</h2>
+			<br />
+			<p>
+				Pour mieux répondre à vos besoins, <b>ILC se développe et vous propose
+					aujourd'hui un service amélioré pour planifier votre formation d’anglais en
+					ligne.</b>
+			</p>
+			<br />
+			<p>Les nouvelles fonctionnalités qui vous sont offertes permettent de
+				réserver modifier ou annuler vos sessions de formation en ligne.</p>
+			<br />
+			<p>Nous espérons que ce nouveau service vous donnera entière
+				satisfaction, n'hésitez pas à nous contacter pour toutes questions (aux
+				horaires habituelles d'ouverture du bureau). </p>
+			<br />
+			<p>
+				Bien cordialement<br /> <b>L’équipe d’ILC</b>
+			</p>
+			{% endblock %}
+		</div>
+		<div id="footer">
+			<h1>Copyright ILC France &copy; {{ 'now'|date('Y') }} | ILC France - IH Paris</h1>
+		</div>
+	</div>
+</body>
+</html>

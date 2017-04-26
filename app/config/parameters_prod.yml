@@ -1,0 +1,5 @@
+# This file is auto-generated during the composer install
+parameters:
+    scheme: https
+    mail_from: "system@%domain_com_ilcfrance_bookingonline%"
+    mailer_transport: smtp

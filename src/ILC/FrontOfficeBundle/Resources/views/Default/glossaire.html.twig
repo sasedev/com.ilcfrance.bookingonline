@@ -1,0 +1,22 @@
+{% extends 'ILCFrontOfficeBundle::template.html.twig' %}
+{% block pagetitle %}{{ pagetitle }} {{ parent() }}{% endblock %}
+{% block left %}
+{{ parent() }}
+{% endblock %} {% block right %}
+<br/>
+<h2>
+	Glossaire
+</h2>
+<p>
+<b>Module de formation</b><br/>
+Unité faisant partie d'un cursus de formation. Chaque module constitue un tout en soi.<br/>
+Il est défini par un objectif de formation, des objectifs pédagogiques, des prérequis, une durée et un contenu. (Source : AFNOR)<br/>
+<br/>
+<b>Session de formation</b><br/>
+Période de formation planifiée dans le temps, organisée pour un groupe selon des objectifs correspondant à des besoins collectifs. (Source : AFNOR)<br/>
+<br/>
+<b>Stage</b><br/>
+Voir session de formation. (Source : AFNOR)
+</p>
+<br/>
+{% endblock %}

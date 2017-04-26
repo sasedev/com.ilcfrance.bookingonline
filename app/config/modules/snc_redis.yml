@@ -1,0 +1,51 @@
+# Redis
+snc_redis:
+    clients:
+        default:
+            type: predis
+            dsn: "%redis_dns%"
+            alias: default
+            options:
+                prefix: "com.ilcfrance.bookingonline"
+        session:
+            type: predis
+            alias: session
+            dsn: "%redis_dns%"
+        swiftmailer:
+            type: predis
+            dsn: "%redis_dns%"
+            alias: swiftmailer
+        cache:
+            type: predis
+            dsn: "%redis_dns%"
+            alias: cache
+            options:
+                prefix: "com.ilcfrance.bookingonline:cache"
+
+    session:
+        client: session
+        prefix: "com.ilcfrance.bookingonline:session"
+    swiftmailer:
+        client: swiftmailer
+        key: swiftmailer
+    doctrine:
+        metadata_cache:
+            client: cache
+            entity_manager: "default"          # the name of your entity_manager connection
+            document_manager: "default"        # the name of your document_manager connection
+            namespace: "%kernel.root_dir%"
+        result_cache:
+            client: cache
+            entity_manager: "default"          # the name of your entity_manager connection
+            document_manager: "default"        # the name of your document_manager connection
+            namespace: "%kernel.root_dir%"
+        query_cache:
+            client: cache
+            entity_manager: "default"          # the name of your entity_manager connection
+            document_manager: "default"        # the name of your document_manager connection
+            namespace: "%kernel.root_dir%"
+        second_level_cache:
+            client: cache
+            entity_manager: "default"          # the name of your entity_manager connection
+            document_manager: "default"        # the name of your document_manager connection
+            namespace: "%kernel.root_dir%"

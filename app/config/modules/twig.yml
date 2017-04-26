@@ -1,0 +1,13 @@
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+#    form_themes:
+#        - 'SaseSharedBundle::form.html.twig'
+    globals:
+        scheme: "%scheme%"
+        domain_com_ilcfrance_bookingonline: "%domain_com_ilcfrance_bookingonline%" 
+        timezone:               "Europe/Paris"
+        default_locale: "%locale%"
+    paths:
+        '%kernel.root_dir%/../web/res': public_res

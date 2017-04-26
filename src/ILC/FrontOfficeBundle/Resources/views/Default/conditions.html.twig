@@ -1,0 +1,22 @@
+{% extends 'ILCFrontOfficeBundle::template.html.twig' %}
+{% block pagetitle %}{{ pagetitle }} {{ parent() }}{% endblock %}
+{% block left %}
+{{ parent() }}
+{% endblock %} {% block right %}
+<br/>
+<h2>
+	Conditions d’ouverture d’un stage
+</h2>
+<p>
+6 inscrits minimum sont nécessaires pour l’ouverture d’un stage.<br/>
+Si besoin, ILC France effectue des relances auprès des stagiaires par mailing et/ou par téléphone afin de tout mettre en œuvre pour que les stages puissent être ouverts.
+</p>
+<br/>
+<h2>Annulation – Modification :</h2>
+<p>
+ILC France se réserve le droit d’annuler les actions de formation, notamment si le nombre d’inscrits est insuffisant au regard des conditions d’ouverture.<br/>
+ILC France préviendra les stagiaires de toute annulation de session, 8 jours avant la date prévue.<br/>
+<b>NB:</b> ILC France  tient le Responsable de formation informé de l’évolution du nombre d’inscriptions.
+</p>
+<br/>
+{% endblock %}

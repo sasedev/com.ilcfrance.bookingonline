@@ -1,0 +1,7 @@
+parameters:
+#    ilc_security.example.class: ILC\SecurityBundle\Example
+
+services:
+#    ilc_security.example:
+#        class: %ilc_security.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

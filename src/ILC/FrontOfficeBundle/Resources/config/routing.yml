@@ -1,0 +1,32 @@
+fo_home:
+    path:  /
+    defaults: { _controller: "ILCFrontOfficeBundle:Default:index" }
+
+fo_updatesessions:
+    path:  /updatesessions
+    defaults: { _controller: "ILCFrontOfficeBundle:Default:updtses" }
+    methods: [POST]
+
+fo_preambule:
+    path:  /preambule
+    defaults: { _controller: "ILCFrontOfficeBundle:Default:preambule" }
+
+fo_procedure_reservation:
+    path:  /procedure_reservation
+    defaults: { _controller: "ILCFrontOfficeBundle:Default:reservation" }
+
+fo_condition_ostage:
+    path:  /conditions_ouverture_stage
+    defaults: { _controller: "ILCFrontOfficeBundle:Default:conditions" }
+
+fo_glossaire:
+    path:  /glossaire
+    defaults: { _controller: "ILCFrontOfficeBundle:Default:glossaire" }
+
+fo_faq:
+    path:  /faq
+    defaults: { _controller: "ILCFrontOfficeBundle:Default:faq" }
+
+fo_annuaire:
+    path:  /annuaire
+    defaults: { _controller: "ILCFrontOfficeBundle:Default:annuaire" }

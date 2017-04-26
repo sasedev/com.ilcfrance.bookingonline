@@ -1,0 +1,43 @@
+{% extends 'ILCSecurityBundle::usertpl.html.twig' %}
+{% block left %}
+{{ parent() }}
+<div class="block">
+<b>Identification : </b><br/>
+{% for flashMessage in app.session.flashbag.get('info') %}
+<div class="msgDivinfo">{{ flashMessage|trans|raw }}</div><br/>
+{% endfor %}
+{% for flashMessage in app.session.flashbag.get('err') %}
+<div class="msgDiverr">{{ flashMessage|trans|nl2br|raw }}</div><br/>
+{% endfor %}
+<br />
+{{form_start(LoginForm, {'method':'POST', 'action': path('_security_check')})}}
+<table>
+	<tr>
+		<th>{{ form_label(LoginForm.username) }} :  &nbsp; </th>
+	</tr>
+	<tr>
+		<td>{{ form_widget(LoginForm.username ) }}</td>
+	</tr>
+	{% if form_errors(LoginForm.username) %}
+	<tr>
+		<td>{{ form_errors(LoginForm.username) }}</td>
+	</tr>
+	{% endif %}
+	<tr>
+		<th> {{ form_label(LoginForm.password) }} :  &nbsp; </th>
+	</tr>
+	<tr>
+		<td>{{ form_widget(LoginForm.password ) }}</td>
+	</tr>
+	{% if form_errors(LoginForm.password) %}
+	<tr>
+		<td>{{ form_errors(adm_form.password) }}</td>
+	</tr>
+	{% endif %}
+	<tr>
+		<th>{{form_row(LoginForm.target_path, {'label_col': 0, 'widget_col': 12})}} <input type="submit" value=" {{ 'user.loginbtn'|trans }} " /> </th>
+	</tr>
+</table>
+{{form_end(LoginForm)}}
+</div>
+{%  endblock %}

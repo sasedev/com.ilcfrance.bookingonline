@@ -1,0 +1,119 @@
+/* *** css by miss monorom www.intensivstation.ch *** */
+/* css released under Creative Commons License -  http://creativecommons.org/licenses/by/2.0/deed.en  */
+body {
+	font-size: 12px;
+	font-family: Arial;
+	color: #564b47;
+	padding: 0px;
+	margin: 0px;
+}
+
+h1 {
+	font-size: 11px;
+	text-transform: uppercase;
+	padding: 5px 15px;
+	margin: 0px
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: normal;
+	padding: 5px 10px;
+	margin: 0px;
+}
+
+img.download {
+	vertical-align: middle;
+}
+
+/* ----------container to center the layout-------------- */
+#container {
+	width: 800px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ----------banner for logo-------------- */
+#banner {
+	padding: 0px;
+	margin: 0px;
+  border-bottom: 1px solid black;
+}
+
+#banner h1 {
+	font-size: 30px;
+	margin-left: 100px;
+}
+
+#banner img {
+	margin-top: -20px;
+  padding: 10px 0px;
+}
+
+#banImg {
+	text-align: right;
+	margin-right: 100px;
+}
+
+/* -----------------content--------------------- */
+#content {
+	font-size: 12px;
+	background-color: #ffffff;
+	padding: 0px;
+	margin-left: 250px;
+	margin-right: 0px;
+}
+
+div#content {
+	min-height: 40px;
+	height: expression(this.scrollHeight >   400 ?   "auto" : "400px");
+}
+
+p,pre {
+	padding: 5px 10px;
+	margin: 0px;
+}
+
+/* --------------left navi------------- */
+#left {
+	float: left;
+	width: 250px;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* -----------footer--------------------------- */
+#footer {
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+	text-align: right;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+
+.clear {
+	clear: both;
+}
+
+.block {
+	font-size: 12px;
+	border: 1px solid black;
+	background-color: #0070C0;
+	color: #FFFFFF;
+	width: 210px;
+	margin: 10px 10px;
+	padding: 10px 10px;
+}
+
+.block a {
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.block a:HOVER {
+	font-weight: normal;
+}
