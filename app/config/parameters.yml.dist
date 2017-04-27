@@ -2,13 +2,16 @@
 # Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
 # http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
+    database_charset: UTF8
+    database_driver: pdo_mysql
     database_host: 127.0.0.1
-    database_port: ~
+    database_port: 3306
     database_name: symfony
     database_user: root
-    database_password: ~
+    database_password: pass
     # You should uncomment this if you want to use pdo_sqlite
     #database_path: "%kernel.root_dir%/data.db3"
+    redis_dns: 'redis://localhost/0'
 
     mailer_transport: smtp
     mailer_host: 127.0.0.1
@@ -17,3 +20,12 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+    locale: fr
+    scheme: http
+    domain_com_ilcfrance_ittool: ittool.ilcfrance.com
+    sitename: ITTOOL.ILCFrance.com
+    siteauthor: 'Salah Abdelkadeur Seif Eddine | SASEDev'
+    metakeywords: 'default keywords'
+    metadescription: 'default description'
+    default_locale:              "%locale%"
+    adapter_upload:         "%kernel.root_dir%/../web/upload"
