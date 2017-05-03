@@ -37,7 +37,7 @@ class SecurityController extends BaseController
 		}
 
 		$lastUsername = $session->get('_security.last_username');
-		$referer = $this->getReferer();
+		$referer = $this->getReferer($request);
 
 		$loginForm = $this->createForm(LoginTForm::class);
 
